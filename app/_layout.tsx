@@ -10,6 +10,9 @@ import List from './List';
 import Model from './Model';
 import Variant from './Variant';
 
+import MoreCar from '../components/AllModels'
+import Details from '../components/Details'
+
 // DA Tab Navigator
 const Tab = createBottomTabNavigator();
 
@@ -24,6 +27,7 @@ function Main() {
 
         tabBarActiveTintColor: '#ECAE36',
         tabBarInactiveTintColor: '#000',
+        
 
         // DA Icon for each tab ()
         tabBarIcon: ({ focused, color, size }) => {
@@ -40,7 +44,7 @@ function Main() {
         },
         //DA TABS!
       })}>
-      <Tab.Screen name="Home" component={Home} options={{ headerShown: false  }} />
+      <Tab.Screen name="Home" component={Home} options={{ title: "HOME"  }} />
       <Tab.Screen name="Compare" component={Compare} options={{ title: 'Compare Car' }} />
     </Tab.Navigator>
   );
@@ -65,6 +69,10 @@ export default function App() {
         <Stack.Screen name="List" component={List} />
         <Stack.Screen name="Model" component={Model} />
         <Stack.Screen name="Variant" component={Variant} />
+
+        <Stack.Screen name="MoreCar" component={MoreCar} options={{title: 'Explore'}} />
+        <Stack.Screen name="Details" component={Details} options={{title: 'Details'}} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

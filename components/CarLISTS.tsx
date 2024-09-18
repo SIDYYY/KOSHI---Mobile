@@ -2,11 +2,20 @@ export const carModels = {
   Ford: [
     {
       id: '1',
+      brand: 'Ford',
       model: 'Ford Mustang 2024',
       year: 2024,
       type: 'Coupe',
       price: 'Php 3,800,000',
       image: 'https://autotijd.be/images/ford/2024/mustang/nieuw/ford-mustang-2024-01.jpg',
+      features: [
+        {id: 'f1', engine: '5.0L V8', seat: '4'}
+      ],
+      gallery: [
+        'https://autotijd.be/images/ford/2024/mustang/nieuw/ford-mustang-2024-01.jpg',
+        'https://autotijd.be/images/ford/2024/mustang/nieuw/ford-mustang-2024-02.jpg',
+        'https://autotijd.be/images/ford/2024/mustang/nieuw/ford-mustang-2024-03.jpg'
+      ],
       variants: [
         { id: '1a', variant: 'Base', price: 'Php 3,800,000' },
         { id: '1b', variant: 'GT', price: 'Php 4,200,000' },
@@ -15,6 +24,7 @@ export const carModels = {
     },
     {
       id: '2',
+      brand: 'Ford',
       model: 'Ford F-150 2024',
       year: 2024,
       type: 'Pickup Truck',
@@ -29,6 +39,7 @@ export const carModels = {
     {
       id: '3',
       model: 'Ford Explorer 2024',
+      brand: 'Ford',
       year: 2024,
       type: 'SUV',
       price: 'Php 3,500,000',
@@ -42,6 +53,7 @@ export const carModels = {
     {
       id: '4',
       model: 'Ford Escape 2024',
+      brand: 'Ford',
       year: 2024,
       type: 'SUV',
       price: 'Php 2,800,000',
@@ -55,6 +67,7 @@ export const carModels = {
     {
       id: '5',
       model: 'Ford Fiesta 2024',
+      brand: 'Ford',
       year: 2024,
       type: 'Hatchback',
       price: 'Php 1,500,000',
@@ -68,6 +81,7 @@ export const carModels = {
     {
       id: '6',
       model: 'Ford Edge 2024',
+      brand: 'Ford',
       year: 2024,
       type: 'SUV',
       price: 'Php 3,000,000',
@@ -81,8 +95,9 @@ export const carModels = {
   ],
   Nissan: [
     {
-      id: '1',
+      id: '7',
       model: 'Nissan Altima 2024',
+      brand: 'Nissan',
       year: 2024,
       type: 'Sedan',
       price: 'Php 2,200,000',
@@ -94,8 +109,9 @@ export const carModels = {
       ]
     },
     {
-      id: '2',
+      id: '8',
       model: 'Nissan Rogue 2024',
+      brand: 'Nissan',
       year: 2024,
       type: 'SUV',
       price: 'Php 2,700,000',
@@ -107,8 +123,9 @@ export const carModels = {
       ]
     },
     {
-      id: '3',
+      id: '9',
       model: 'Nissan Sentra 2024',
+      brand: 'Nissan',
       year: 2024,
       type: 'Sedan',
       price: 'Php 1,800,000',
@@ -120,8 +137,9 @@ export const carModels = {
       ]
     },
     {
-      id: '4',
+      id: '10',
       model: 'Nissan Pathfinder 2024',
+      brand: 'Nissan',
       year: 2024,
       type: 'SUV',
       price: 'Php 3,300,000',
@@ -133,8 +151,9 @@ export const carModels = {
       ]
     },
     {
-      id: '5',
+      id: '11',
       model: 'Nissan Murano 2024',
+      brand: 'Nissan',
       year: 2024,
       type: 'SUV',
       price: 'Php 2,900,000',
@@ -146,8 +165,9 @@ export const carModels = {
       ]
     },
     {
-      id: '6',
+      id: '12',
       model: 'Nissan 370Z 2024',
+      brand: 'Nissan',
       year: 2024,
       type: 'Coupe',
       price: 'Php 2,500,000',
@@ -160,8 +180,9 @@ export const carModels = {
   ],
   Mitsubishi: [
     {
-      id: '1',
+      id: '13',
       model: 'Mitsubishi Outlander 2024',
+      brand: 'Mitsubishi',
       year: 2024,
       type: 'SUV',
       price: 'Php 2,800,000',
@@ -173,8 +194,9 @@ export const carModels = {
       ]
     },
     {
-      id: '2',
+      id: '14',
       model: 'Mitsubishi Pajero 2024',
+      brand: 'Mitsubishi',
       year: 2024,
       type: 'SUV',
       price: 'Php 3,200,000',
@@ -186,8 +208,9 @@ export const carModels = {
       ]
     },
     {
-      id: '3',
+      id: '15',
       model: 'Mitsubishi Lancer 2024',
+      brand: 'Mitsubishi',
       year: 2024,
       type: 'Sedan',
       price: 'Php 1,700,000',
@@ -199,8 +222,9 @@ export const carModels = {
       ]
     },
     {
-      id: '4',
+      id: '16',
       model: 'Mitsubishi Montero Sport 2024',
+      brand: 'Mitsubishi',
       year: 2024,
       type: 'SUV',
       price: 'Php 2,900,000',
@@ -212,8 +236,9 @@ export const carModels = {
       ]
     },
     {
-      id: '5',
+      id: '17',
       model: 'Mitsubishi ASX 2024',
+      brand: 'Mitsubishi',
       year: 2024,
       type: 'SUV',
       price: 'Php 2,500,000',
@@ -225,8 +250,9 @@ export const carModels = {
       ]
     },
     {
-      id: '6',
+      id: '18',
       model: 'Mitsubishi Eclipse Cross 2024',
+      brand: 'Mitsubishi',
       year: 2024,
       type: 'SUV',
       price: 'Php 2,900,000',
@@ -239,8 +265,9 @@ export const carModels = {
   ],
   BMW: [
     {
-      id: '1',
+      id: '19',
       model: 'BMW 3 Series 2024',
+      brand: 'BMW',
       year: 2024,
       type: 'Sedan',
       price: 'Php 3,600,000',
@@ -252,8 +279,9 @@ export const carModels = {
       ]
     },
     {
-      id: '2',
+      id: '20',
       model: 'BMW X5 2024',
+      brand: 'BMW',
       year: 2024,
       type: 'SUV',
       price: 'Php 5,000,000',
@@ -265,8 +293,9 @@ export const carModels = {
       ]
     },
     {
-      id: '3',
+      id: '21',
       model: 'BMW X3 2024',
+      brand: 'BMW',
       year: 2024,
       type: 'SUV',
       price: 'Php 4,000,000',
@@ -278,8 +307,9 @@ export const carModels = {
       ]
     },
     {
-      id: '4',
+      id: '22',
       model: 'BMW 5 Series 2024',
+      brand: 'BMW',
       year: 2024,
       type: 'Sedan',
       price: 'Php 4,500,000',
@@ -291,8 +321,9 @@ export const carModels = {
       ]
     },
     {
-      id: '5',
+      id: '23',
       model: 'BMW X7 2024',
+      brand: 'BMW',
       year: 2024,
       type: 'SUV',
       price: 'Php 6,500,000',
@@ -304,8 +335,9 @@ export const carModels = {
       ]
     },
     {
-      id: '6',
+      id: '24',
       model: 'BMW Z4 2024',
+      brand: 'BMW',
       year: 2024,
       type: 'Convertible',
       price: 'Php 4,000,000',
@@ -318,8 +350,9 @@ export const carModels = {
   ],
   Toyota: [
     {
-      id: '1',
+      id: '25',
       model: 'Toyota Camry 2024',
+      brand: 'Toyota',
       year: 2024,
       type: 'Sedan',
       price: 'Php 1,800,000',
@@ -331,8 +364,9 @@ export const carModels = {
       ]
     },
     {
-      id: '2',
+      id: '26',
       model: 'Toyota RAV4 2024',
+      brand: 'Toyota',
       year: 2024,
       type: 'SUV',
       price: 'Php 2,200,000',
@@ -344,8 +378,9 @@ export const carModels = {
       ]
     },
     {
-      id: '3',
+      id: '27',
       model: 'Toyota Hilux 2024',
+      brand: 'Toyota',
       year: 2024,
       type: 'Pickup',
       price: 'Php 1,900,000',
@@ -357,8 +392,9 @@ export const carModels = {
       ]
     },
     {
-      id: '4',
+      id: '28',
       model: 'Toyota Fortuner 2024',
+      brand: 'Toyota',
       year: 2024,
       type: 'SUV',
       price: 'Php 2,700,000',
@@ -370,8 +406,9 @@ export const carModels = {
       ]
     },
     {
-      id: '5',
+      id: '29',
       model: 'Toyota Land Cruiser 2024',
+      brand: 'Toyota',
       year: 2024,
       type: 'SUV',
       price: 'Php 5,000,000',
@@ -383,8 +420,9 @@ export const carModels = {
       ]
     },
     {
-      id: '6',
+      id: '30',
       model: 'Toyota Supra 2024',
+      brand: 'Toyota',
       year: 2024,
       type: 'Sports',
       price: 'Php 4,500,000',
@@ -397,8 +435,9 @@ export const carModels = {
   ],
     Chevrolet: [
       {
-        id: "1",
+        id: "31",
         model: "Chevrolet Malibu 2024",
+        brand: 'Chevrolet',
         year: 2024,
         type: "Sedan",
         price: "Php 1,700,000",
@@ -417,8 +456,9 @@ export const carModels = {
         ]
       },
       {
-        id: "2",
+        id: "32",
         model: "Chevrolet Equinox 2024",
+        brand: 'Chevrolet',
         year: 2024,
         type: "SUV",
         price: "Php 1,900,000",
@@ -437,8 +477,9 @@ export const carModels = {
         ]
       },
       {
-        id: "3",
+        id: "33",
         model: "Chevrolet Silverado 2024",
+        brand: 'Chevrolet',
         year: 2024,
         type: "Pickup Truck",
         price: "Php 3,400,000",
@@ -462,8 +503,9 @@ export const carModels = {
         ]
       },
       {
-        id: "4",
+        id: "34",
         model: "Chevrolet Traverse 2024",
+        brand: 'Chevrolet',
         year: 2024,
         type: "SUV",
         price: "Php 2,700,000",
@@ -487,8 +529,9 @@ export const carModels = {
         ]
       },
       {
-        id: "5",
+        id: "35",
         model: "Chevrolet Camaro 2024",
+        brand: 'Chevrolet',
         year: 2024,
         type: "Coupe",
         price: "Php 2,500,000",
@@ -512,8 +555,9 @@ export const carModels = {
         ]
       },
       {
-        id: "6",
+        id: "36",
         model: "Chevrolet Tahoe 2024",
+        brand: 'Chevrolet',
         year: 2024,
         type: "SUV",
         price: "Php 4,000,000",

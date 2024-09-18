@@ -124,9 +124,11 @@ export default function Popular(){
           <View style={styles.container}>
                 <View style={styles.headContent}>
                     <Text style={styles.Popular}>Popular New Cars</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('MoreCar')}>
                     <Text style={styles.seeMore}>See More
                         <Text style={styles.boldArrow}> {'>'} </Text> 
                     </Text>
+                    </TouchableOpacity>
                 </View>
                 <ScrollView horizontal contentContainerStyle={styles.horizontalFrameContainer}>
       <View style={styles.frameContainer}>

@@ -69,10 +69,10 @@ export default function Popular({ route }) {
                 </TouchableOpacity>
               ))}
             </View>
-            <Text style={styles.seeMore}>
-              See More
-              <Text style={styles.boldArrow}> {'>'} </Text>
-            </Text>
+              {/* <Text style={styles.seeMore}>
+                See More
+                <Text style={styles.boldArrow}> {'>'} </Text>
+              </Text> */}
           </View>
         </View>
 
@@ -131,9 +131,9 @@ const styles = StyleSheet.create({
       },
       frameContainer: {
         marginTop: 20,
-        marginRight: 70,
+        marginRight: 170,
         flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: 'start',
       },
       frame: {
         padding: 10,
