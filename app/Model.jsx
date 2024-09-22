@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     fontWeight: 'bold',
+    width: 180
   },
   scrollContainer: {
     paddingBottom: 20,

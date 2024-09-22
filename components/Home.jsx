@@ -119,7 +119,6 @@ export default function HomePage() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fff '
   },
   container: {
     padding: 15,

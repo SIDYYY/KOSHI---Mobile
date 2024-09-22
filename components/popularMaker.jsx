@@ -53,7 +53,7 @@ export default function Popular({ route }) {
         <View style={styles.headContent}>
           <Text style={styles.Popular}>Popular Car Makes & Body Type</Text>
           <View style={styles.rowCarMaker}>
-            <View style={styles.frameContainer}>
+            {/* <View style={styles.frameContainer}>
               {['Car Makes', 'Body Type'].map(frame => (
                 <TouchableOpacity
                   key={frame}
@@ -68,7 +68,7 @@ export default function Popular({ route }) {
                   </Text>
                 </TouchableOpacity>
               ))}
-            </View>
+            </View> */}
               {/* <Text style={styles.seeMore}>
                 See More
                 <Text style={styles.boldArrow}> {'>'} </Text>
@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
       container: {
         flexGrow: 1,
         justifyContent: 'flex-start',
-        padding: 5
+        padding: 5,
+        marginTop: 25
       },
       rowCarMaker: {
         flexDirection: 'row',

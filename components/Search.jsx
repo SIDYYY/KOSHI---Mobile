@@ -24,55 +24,53 @@ const CarModel = () => {
     navigation.navigate('Details', { carModel });
   };
 
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
 
-        {/*search bar */}
+        {/* Search bar */}
         <View style={styles.searchContainer}>
           <SearchBar
-            placeholder="Search"
+            placeholder="Search for a car model"
             onChangeText={getSearch}
             value={search}
             lightTheme
             round
-            searchIcon={{ size: 24}}
-            clearIcon={{ size: 24, containerStyle: styles.clearContainer }}
             containerStyle={styles.searchBarContainer}
+            searchIcon={{ size: 24 }}
+            clearIcon={{ size: 24, containerStyle: styles.clearContainer }}
             inputContainerStyle={styles.searchBarInputContainer}
             inputStyle={styles.searchBarInput}
           />
         </View>
+        <Text style={styles.result}>Result </Text>
 
-        <View style={styles.rowHead}>
-          <Text style={styles.header}>Car Models</Text>
-        </View>
-
-        {/*Car model mapping */}
+        {/* Display filtered car models */}
         <ScrollView contentContainerStyle={styles.scrollContainer}>
-          {filteredCarModels.length > 0 ? filteredCarModels.map((carModel) => (
+          {filteredCarModels.length === 1 ? ( // Only display if one car model is found
             <TouchableOpacity
-              key={carModel.id} // unique key
-              style={styles.carModel}
-              onPress={() => handleCarSelect(carModel)}
-            >
-              <Image source={{ uri: carModel.image }} style={styles.image} />
-              <View style={styles.carModelInfo}>
-                <Text style={styles.text}>{carModel.model} ({carModel.year})</Text>
-                <Text style={styles.priceText}>Price:</Text>
-                <Text style={styles.displayPrice}>{carModel.price}</Text>
-                <View style={styles.rowFoot}>
-                  <Text style={styles.variants}>{carModel.variants.length} Variants</Text>
-                  <Text style={styles.type}>Type: {carModel.type}</Text>
-                </View>
-                <TouchableOpacity style={styles.detailButton} onPress={() => handleCarSelect(carModel)}>
-                              <Text style={styles.detailText}>View Detail</Text>
-                            </TouchableOpacity>
+            key={filteredCarModels[0].id} // unique key
+            style={styles.carModel}
+            onPress={() => handleCarSelect(filteredCarModels[0])}>
+
+            <Image source={{ uri: filteredCarModels[0].image }} style={styles.image} />
+            <View style={styles.carModelInfo}>
+              <Text style={styles.text}>{filteredCarModels[0].model} ({filteredCarModels[0].year})</Text>
+              <Text style={styles.priceText}>Price:</Text>
+              <Text style={styles.displayPrice}>{filteredCarModels[0].price}</Text>
+              <View style={styles.rowFoot}>
+                <Text style={styles.variants}>{filteredCarModels[0].variants.length} Variants</Text>
+                <Text style={styles.type}>Type: {filteredCarModels[0].type}</Text>
               </View>
+            <TouchableOpacity style={styles.detailButton} onPress={() => handleCarSelect(filteredCarModels[0])}>
+                <Text style={styles.detailText}>View Detail</Text>
             </TouchableOpacity>
-          )) : (
-            <Text>No car models available</Text>
-          )}
+            </View>
+          </TouchableOpacity>
+          ) : filteredCarModels.length === 0 ? (
+            <Text style={styles.noResultsText}>No car model found</Text>
+          ) : null}
         </ScrollView>
       </ScrollView>
     </SafeAreaView>
@@ -80,48 +78,23 @@ const CarModel = () => {
 };
 
 const styles = StyleSheet.create({
+    container: {
+        padding: 20,
+        flex: 1,
+    },
   safeArea: {
     flex: 1,
-    backgroundColor: '#fff',
   },
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
+  result: {
+    marginVertical: 20,
+    fontSize: 22,
+    fontWeight: 'bold'
   },
   searchContainer: {
-    marginTop: 20,
-    marginHorizontal: 25,
+    marginBottom: 10,
   },
-  searchBarContainer: {
-    backgroundColor: 'transparent',
-    borderBottomColor: 'transparent',
-    borderTopColor: 'transparent',
-    padding: 0
-  },
-  searchBarInputContainer: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderBottomWidth: 3,
-    borderColor: '#000',
-    borderRadius: 30,
-    paddingRight: 10,
-    flexDirection: 'row-reverse'
-  },
-  searchBarInput: {
-    backgroundColor: '#fff',
-  },
-  clearContainer: {
-    paddingLeft: 10
-  },
-  rowHead: {
-    marginTop: 40,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  header: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  scrollContainer: {
+    alignItems: 'center'
   },
   scrollContainer: {
     paddingBottom: 20,
@@ -188,7 +161,41 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     textAlign: 'center'
-  }
+    },
+  noResultsText: {
+    fontSize: 18,
+    marginTop: 20,
+  },
+  searchContainer: {
+    marginTop: 20,
+    marginHorizontal: 25,
+  },
+  searchBarContainer: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent',
+    borderTopColor: 'transparent',
+    padding: 0
+  },
+  searchBarInputContainer: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderBottomWidth: 3,
+    borderColor: '#000',
+    borderRadius: 30,
+    paddingRight: 10,
+    flexDirection: 'row-reverse'
+  },
+  searchBarInput: {
+    backgroundColor: '#fff',
+  },
+  iconContainer: {
+    paddingRight: 10,
+    justifyContent: 'flex-end',
+  },
+  clearContainer: {
+    paddingLeft: 10 
+  },
+  
 });
 
 export default CarModel;

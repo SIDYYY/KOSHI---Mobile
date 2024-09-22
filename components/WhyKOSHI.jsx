@@ -68,12 +68,6 @@ return(
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flexGrow: 1,
-        padding: 5,
-        flex: 1,
-        backgroundColor: '#fff',
-      },
       reasonSection: {
         padding: 20,
         justifyContent: 'space-between',
@@ -81,6 +75,8 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
       },
       sectionTitle: {
+        marginTop: 35,
+        paddingLeft: 5,
         fontSize: 24,
         fontWeight: 'bold',
         color: '#000',

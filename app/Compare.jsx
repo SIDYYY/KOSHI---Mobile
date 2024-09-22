@@ -20,6 +20,15 @@ export default function Compare({ route }) {
         }
     }, [route.params]);
 
+    const clear = (slot) => {
+        if (slot ===1){
+            setCar1(null);
+        }
+            else if( slot === 2){
+                setCar2(null);
+            }
+    }
+
     const handleSelectCar = (slot) => {
         navigation.navigate('List', { slot }); // Pass slot num correctly
         console.log('Slot #' , slot);
@@ -47,6 +56,10 @@ export default function Compare({ route }) {
 
                 <View style={styles.comparingBox}>
                     <TouchableOpacity style={styles.box} onPress={() => handleSelectCar(1)}>
+                    {car1 && (<TouchableOpacity style={styles.removeButton} onPress={() => clear(1)}>
+                                <Ionicons name="close-circle" size={24} color="#FF4D4D" />
+                            </TouchableOpacity>
+                        )}
                         <View style={styles.boxBorder}>
                             {car1 ? (
                                 <Image source={{ uri: car1.image }} style={styles.carImage} />
@@ -56,17 +69,25 @@ export default function Compare({ route }) {
                         </View>
                         <Text style={styles.boxText}>{car1 ? car1.model : 'Select Car 1'}</Text>
                     </TouchableOpacity>
-
+                    
+                    
                     <TouchableOpacity style={styles.box} onPress={() => handleSelectCar(2)}>
+                    {car2 && (<TouchableOpacity style={styles.removeButton} onPress={() => clear(2)}>
+                                <Ionicons name="close-circle" size={24} color="#FF4D4D" />
+                            </TouchableOpacity>
+                        )}
                         <View style={styles.boxBorder}>
-                            {car2 ? (
-                                <Image source={{ uri: car2.image }} style={styles.carImage} />
-                            ) : (
-                                <Ionicons name="add" size={60} color="#ECAE36" />
-                            )}
+                        
+
+                        {car2 ? (
+                             <Image source={{ uri: car2.image }} style={styles.carImage} />
+                        ) : (
+                            <Ionicons name="add" size={60} color="#ECAE36" />
+                        )}
                         </View>
-                        <Text style={styles.boxText}>{car2 ? car2.model : 'Select Car 2'}</Text>
+                        <Text style={styles.boxText}>{car2 ? car2.model : 'Select Car 2'}</Text>                        
                     </TouchableOpacity>
+
                 </View>
 
                 <TouchableOpacity style={styles.compareButton} onPress={handleComparePress}>
@@ -80,7 +101,6 @@ export default function Compare({ route }) {
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: '#fff',
       },
       container: {
         padding: 28,
@@ -117,6 +137,7 @@ const styles = StyleSheet.create({
         shadowRadius: 1.8,
         borderRadius: 8,
         width: 160,
+        padding: 10,
         height: 160
     },
     boxBorder: {
@@ -148,7 +169,12 @@ const styles = StyleSheet.create({
         height: '85%',
         padding: 30,
         aspectRatio: 1.5,
-        borderRadius: 4
+        borderRadius: 4,
+        position: 'relative'
+    },
+    removeButton: {
+        position: 'absolute',
+        right: 0
     }
 
 })
